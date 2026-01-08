@@ -1,25 +1,24 @@
-//spread op in array
-const group1 = ['Rohit','Disha','Komal']
-const group2 = ['Richa','Swati','Abhinav']
-const combined_group = [...group1,...group2]
-console.log(combined_group)
+const s = ['rohit','amit']
+const n = [...s] //copy array 
+console.log(n)
+const a = {id:12,username:'helloween_us'}
+const b = {...a}//copy object
 
-//spread op in object
+//merging arrays
+const old_students = ['Rohit','Sumit']
+const new_students = ['Richa','Komal']
+const all_students = [...old_students,...new_students]
+console.log(all_students)
 
-const personal_details= {name:'Abhinav sharma',age:20}
-const professional_details = {isGraduated:true,marks:100}
-
-const profile= {...personal_details,...professional_details}
-console.log(profile)
-
-function arraySum(...numbers){
-    let total = 0
-    for(const num of numbers){
-        
-        total += num
-    }
-        
-    return total
+//mergin objects
+const user = {
+    name:'Abhinav sharma',
+    age:20
+}
+const details = {
+    phone:76345345,
+    email:'hellwoeen@gmail.com'
 }
 
-console.log(arraySum(1,23,21,4,5,67))
+const person = {...user,...details} //marged object
+console.log(person)

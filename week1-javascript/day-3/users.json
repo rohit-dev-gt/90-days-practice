@@ -1,0 +1,234 @@
+[
+  {
+    "id": 1,
+    "username": "rohit_dev",
+    "email": "rohit@example.com",
+    "profile": {
+      "fullName": "Rohit Sharma",
+      "age": 30,
+      "address": {
+        "city": "Delhi",
+        "country": "India"
+      }
+    },
+    "settings": {
+      "theme": "dark",
+      "notifications": {
+        "email": true,
+        "sms": false
+      }
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 120,
+      "lastLogin": "2025-12-28T10:30:00Z"
+    }
+  },
+  {
+    "id": 2,
+    "username": "anita_k",
+    "email": "anita@example.com",
+    "profile": {
+      "fullName": "Anita Kapoor",
+      "age": null,
+      "address": {
+        "city": "Mumbai",
+        "country": "India"
+      }
+    },
+    "settings": {
+      "theme": "light",
+      "notifications": {
+        "email": false
+      }
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 0,
+      "lastLogin": null
+    }
+  },
+  {
+    "id": 3,
+    "username": "sam_guest",
+    "email": null,
+    "profile": null,
+    "settings": null,
+    "account": {
+      "isActive": false,
+      "loginCount": null,
+      "lastLogin": null
+    }
+  },
+  {
+    "id": 4,
+    "username": "neha_admin",
+    "email": "neha@example.com",
+    "profile": {
+      "fullName": "Neha Verma",
+      "age": 28,
+      "address": {
+        "city": "Bangalore",
+        "country": "India",
+        "pincode": 560001
+      }
+    },
+    "settings": {
+      "theme": "dark",
+      "notifications": {
+        "email": true,
+        "sms": true,
+        "push": true
+      }
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 340,
+      "lastLogin": "2026-01-05T18:45:00Z"
+    }
+  },
+  {
+    "id": 5,
+    "username": "mohit_zero",
+    "email": "mohit@example.com",
+    "profile": {
+      "fullName": "Mohit Jain",
+      "age": 0,
+      "address": {
+        "city": "Jaipur",
+        "country": "India"
+      }
+    },
+    "settings": {
+      "theme": null,
+      "notifications": {
+        "email": true,
+        "sms": false
+      }
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 1,
+      "lastLogin": "2026-01-01T08:00:00Z"
+    }
+  },
+  {
+    "id": 6,
+    "username": "richa_pm",
+    "email": "richa@example.com",
+    "profile": {
+      "fullName": "Richa Mehta",
+      "age": 35,
+      "address": null
+    },
+    "settings": {
+      "theme": "light",
+      "notifications": null
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 78,
+      "lastLogin": "2025-12-30T21:15:00Z"
+    }
+  },
+  {
+    "id": 7,
+    "username": "dev_temp",
+    "email": "dev@example.com",
+    "profile": {
+      "fullName": "Temporary User",
+      "age": null,
+      "address": {
+        "city": null,
+        "country": "India"
+      }
+    },
+    "settings": {
+      "theme": "dark",
+      "notifications": {
+        "email": false,
+        "sms": false
+      }
+    },
+    "account": {
+      "isActive": false,
+      "loginCount": 0,
+      "lastLogin": null
+    }
+  },
+  {
+    "id": 8,
+    "username": "admin_root",
+    "email": "root@example.com",
+    "profile": {
+      "fullName": "System Admin",
+      "age": 40,
+      "address": {
+        "city": "Pune",
+        "country": "India"
+      }
+    },
+    "settings": {
+      "theme": "dark",
+      "notifications": {
+        "email": true,
+        "sms": true
+      }
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 999,
+      "lastLogin": "2026-01-08T23:59:00Z"
+    }
+  },
+  {
+    "id": 9,
+    "username": "guest_anon",
+    "email": "",
+    "profile": {
+      "fullName": "",
+      "age": null,
+      "address": null
+    },
+    "settings": {
+      "theme": "light",
+      "notifications": {
+        "email": false
+      }
+    },
+    "account": {
+      "isActive": false,
+      "loginCount": 0,
+      "lastLogin": null
+    }
+  },
+  {
+    "id": 10,
+    "username": "beta_user",
+    "email": "beta@example.com",
+    "profile": {
+      "fullName": "Beta Tester",
+      "age": 26,
+      "address": {
+        "city": "Hyderabad",
+        "country": "India"
+      }
+    },
+    "settings": {
+      "theme": "dark",
+      "notifications": {
+        "email": true,
+        "sms": false
+      },
+      "features": {
+        "betaAccess": true,
+        "newDashboard": false
+      }
+    },
+    "account": {
+      "isActive": true,
+      "loginCount": 5,
+      "lastLogin": "2026-01-09T06:20:00Z"
+    }
+  }
+]

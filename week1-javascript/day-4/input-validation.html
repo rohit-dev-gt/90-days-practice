@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Validation Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 6px;
+      width: 250px;
+    }
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form id="studentForm">
+    <input type="text" id="name" placeholder="Name" />
+    <input type="text" id="age" placeholder="Age" />
+    <input type="text" id="email" placeholder="Email" />
+    <input type="text" id="phone" placeholder="Phone" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById("studentForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      result.innerHTML = "";
+
+      try {
+        const data = {
+          name: document.getElementById("name").value.trim(),
+          age: document.getElementById("age").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          phone: document.getElementById("phone").value.trim()
+        };
+
+        validateRequired(data);
+        validateTypes(data);
+        validateRange(data.age);
+        validateEmail(data.email);
+        validatePhone(data.phone);
+        customValidation(data.name);
+
+        result.innerHTML = "<p class='success'>Form submitted successfully</p>";
+      } catch (err) {
+        result.innerHTML = `<p class="error">${err.message}</p>`;
+      }
+    });
+
+    /************** VALIDATIONS **************/
+
+    // Required field validation
+    function validateRequired(data) {
+      for (let key in data) {
+        if (!data[key]) {
+          throw new Error(`${key} is required`);
+        }
+      }
+    }
+
+    // Type checking
+    function validateTypes(data) {
+      if (isNaN(Number(data.age))) {
+        throw new Error("Age must be a number");
+      }
+    }
+
+    // Range validation
+    function validateRange(age) {
+      const numAge = Number(age);
+      if (numAge < 5 || numAge > 60) {
+        throw new Error("Age must be between 5 and 60");
+      }
+    }
+
+    // Format validation (email)
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        throw new Error("Invalid email format");
+      }
+    }
+
+    // Format validation (phone)
+    function validatePhone(phone) {
+      const phoneRegex = /^[6-9]\d{9}$/;
+      if (!phoneRegex.test(phone)) {
+        throw new Error("Invalid phone number");
+      }
+    }
+
+    // Custom validation
+    function customValidation(name) {
+      if (name.length < 3) {
+        throw new Error("Name must have at least 3 characters");
+      }
+    }
+  </script>
+
+</body>
+</html>

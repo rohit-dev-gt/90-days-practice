@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Delegation - Delete Row</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 400px;
+    }
+    td, th {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    button.del {
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <table id="users">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rohit</td>
+        <td><button class="del">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Amit</td>
+        <td><button class="del">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Neha</td>
+        <td><button class="del">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const users = document.getElementById('users');
+
+    //event bubbling up
+    /* 
+    when user clicks on button, the event bubble up to -> td->tr->tbody->table->body->document
+    but table has event listerner so it catches the event although, event.target is still that particular button that was clicked
+
+    e.target.classList.contains('del') //so it checking if clicked target has del class
+    //if yes then it delete the  closest tr
+
+    e.target.closest('tr').remove(); // it finds upwards and when matches just remove
+
+    */
+    users.addEventListener('click', (e) => { //event catptured
+        console.log(e.target)
+      if (e.target.classList.contains('del')) {
+        e.target.closest('tr').remove();
+      }
+    });
+  </script>
+
+</body>
+</html>

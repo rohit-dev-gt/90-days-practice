@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="demo">
+
+    </div>
+
+    <script>
+        const p = document.createElement('p') //create p html element
+        p.innerHTML = 'Hello world'
+        document.body.appendChild(p) //adds child to end 
+
+        document.body.removeChild(p) //removes child
+
+
+        //element.innerHTML - get/set HTML content
+        const demo = document.querySelector('#demo')
+        const data_including_tags = demo.innerHTML //gets html content including tags
+        const data_with_text_only = demo.textContent //gets text
+        //
+    </script>
+</body>
+</html>

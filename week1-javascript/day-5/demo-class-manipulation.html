@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+        .active{
+            background-color: #4caf50 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <hr>
+    <button id="btn1">Add Class</button>
+    <button id="btn2">Remove Class</button>
+    <button id="btn3">Check Class</button>
+    <button id="btn4">Toggle Class</button>
+
+    <button id="removeEventListener">Remove EventListerner</button>
+
+    <script>
+        const demo  = document.querySelector("#demo")
+
+        const btn1 = document.querySelector("#btn1")
+        const btn2 = document.querySelector("#btn2")
+        const btn3 = document.querySelector("#btn3")
+        const btn4 = document.querySelector("#btn4")
+        const removeEventListener = document.querySelector("#removeEventListener")
+
+
+        /* 
+        element.addEventListener(event, callback) - add listener
+        element.removeEventListener(event, callback) - remove listener
+        */
+        btn1.addEventListener('click',function(){
+            
+            demo.classList.add('active')
+        })
+        btn2.addEventListener('click',function(){
+            demo.classList.remove('active')
+        })
+        btn3.addEventListener('click',function(){
+            const check = demo.classList.contains('active')
+            if(check){
+                alert('Yes active class exist')
+            }else{
+                alert('active class Not exist')
+            }
+        })
+
+        const toggleFun = function(){
+            demo.classList.toggle('active')
+        }
+        btn4.addEventListener('click',toggleFun)
+
+        removeEventListener.addEventListener('click',function(){
+            btn4.removeEventListener('click',toggleFun)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 20px;
+        }
+        textarea{
+            width: 100%;
+            height: 200px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Take notes</h1>
+    <textarea id="content"></textarea>
+    <button id="save">Save Note</button>
+    <button id="clear">Clear Note</button>
+    <div id="note"></div>
+
+    <script>
+
+        const saveBtn = document.querySelector("#save")
+        const clearBtn = document.querySelector("#clear")
+        const content = document.querySelector("#content")
+        const note = document.querySelector("#note")
+        if(localStorage.getItem("note")){
+            note.innerHTML = localStorage.getItem("note")
+        }
+        saveBtn.addEventListener('click',function(e){
+            localStorage.setItem("note",content.value)
+            note.innerHTML = content.value
+        })
+        clearBtn.addEventListener("click",function(){
+            note.innerHTML = ''
+            localStorage.removeItem("note")
+        })
+    </script>
+    
+</body>
+</html>

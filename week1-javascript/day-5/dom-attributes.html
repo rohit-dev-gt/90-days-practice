@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height:200px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="demo">
+
+    </div>
+
+    <script>
+        const demo =  document.querySelector("#demo")
+        demo.setAttribute("class","box")
+
+        const attr = demo.getAttribute("id")
+        console.log(attr)
+    </script>
+</body>
+</html>

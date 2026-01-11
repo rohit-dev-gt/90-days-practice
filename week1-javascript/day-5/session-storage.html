@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="name" placeholder="Enter name">
+<button id="save">Save</button>
+<button id="load">Load</button>
+<p id="output"></p>
+
+<script>
+const nameInput = document.getElementById("name")
+const output = document.getElementById("output")
+
+document.getElementById("save").onclick = () => {
+  sessionStorage.setItem("username", nameInput.value)
+}
+
+document.getElementById("load").onclick = () => {
+  output.textContent = sessionStorage.getItem("username") || ""
+}
+</script>
+
+</body>
+</html>

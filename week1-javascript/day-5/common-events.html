@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="enquiry">
+        <input type="text" name="name">
+        <button id="submit">Submit</button>
+    </form>
+
+    <!-- 
+    Common events:  input, change, submit, keydown, keyup
+
+    Event object: event.target, event.preventDefault(), event.stopPropagation()
+    -->
+    <script>
+        const form = document.querySelector("#enquiry")
+        const name = document.querySelector("[name='name']")
+        const submitBtn = document.querySelector("#submit")
+        name.addEventListener('input',function(){
+            const value= this.value
+            this.value = value.toUpperCase() //makes upppercase when user input
+            if(value.length>10){
+                
+            }
+        })
+        form.addEventListener('submit',function(e){
+            //e is event object
+            e.preventDefault() //prevents page from being submitted
+            console.log(e.target)
+            
+        })
+
+        submitBtn.addEventListener('click',function(event){
+            if(name.value<3){
+                event.stopPropagation()
+            }
+        })
+    </script>
+</body>
+</html>
